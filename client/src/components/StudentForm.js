@@ -7,7 +7,7 @@ const StudentForm = (props) => {
 const validationSchema = Yup.object().shape({
 	name: Yup.string().required("Required"),
 	email: Yup.string()
-	.email("You have enter an  invalid mail address")
+	.email("You have enter an  invalid email address")
 	.required("Required"),
 	rollno: Yup.number()
 	.positive("Invalid roll number")
