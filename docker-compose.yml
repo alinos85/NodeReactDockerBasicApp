@@ -1,0 +1,37 @@
+version: '3'
+services:
+  student_mysql:
+    image: mysql
+    hostname: student_mysql
+    container_name: student_mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'studentDB'
+      MYSQL_USER: 'aliyou'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    volumes:
+      - my-db-volume:/var/lib/mysql
+  nodejs-server:
+    build:
+      context: ./server
+    ports:
+      - "4000:4000"
+    container_name: node-api
+    volumes:
+       - ./server:/NodeReactProject/server
+       - /NodeReactProject/server/node_modules
+  react-ui:
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    container_name: react-ui
+    stdin_open: true
+    volumes:
+       - ./client:/NodeReactProject/client
+       - /NodeReactProject/client/node_modules
+volumes:
+      my-db-volume:
