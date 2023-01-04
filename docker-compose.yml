@@ -19,12 +19,6 @@ services:
       context: ./server
     ports:
       - "4000:4000"
-    links:
-      - student_mysql
-    depends_on:
-      - student_mysql
-    environment:
-      WAIT_HOSTS: student_mysql:3306
     container_name: node-api
     volumes:
        - ./server:/NodeReactProject/server
