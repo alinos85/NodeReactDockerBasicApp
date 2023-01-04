@@ -4,8 +4,7 @@ const config = {
       host: "student_mysql",
       user: "root",
       password: "password",
-      database: "studentDB",
-      socketPath: '/var/run/mysqld/mysqld.sock'
+      database: "studentDB"
     }
   };
   module.exports = config;
