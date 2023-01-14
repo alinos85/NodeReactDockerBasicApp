@@ -1,2 +1,2 @@
 # NodeReactDockerBasicApp
-Basic CRUD application to manage a list of customers using NodeJs,React,Docker and Mysql database
+Basic CRUD application to manage a list of students using NodeJs,React,Docker and Mysql database
